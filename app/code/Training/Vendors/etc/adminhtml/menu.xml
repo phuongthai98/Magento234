@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Training_Vendors::test_vendors" title="Training Vendors" module="Training_Vendors" sortOrder="51" resource="Training_Vendors::test_vendors"/>
+        <add id="Training_Vendors::vendors_post" title="Vendors Posts" module="Training_Vendors" sortOrder="10" action="training_vendors/post/index" resource="Training_Vendors::vendors_post" parent="Training_Vendors::test_vendors"/>
+        <add id="Training_Vendors::test_vendors_configuration" title="Vendors Configuration" module="Training_Vendors" sortOrder="99" parent="Training_Vendors::test_vendors" action="adminhtml/system_config/edit/section/abc" resource="Training_Vendors::test_vendors_configuration"/>
+    </menu>
+</config>

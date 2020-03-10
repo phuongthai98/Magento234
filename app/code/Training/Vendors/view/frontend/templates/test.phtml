@@ -1,0 +1,37 @@
+
+<style>
+    table {  font-family: arial, sans-serif;  border-collapse: collapse;  width: 100%;  margin-top: 30px;}
+    td, th {  border: 1px solid #dddddd;  text-align: left;  padding: 8px;  }
+    tr:nth-child(even) { background-color: #dddddd; }
+    .post-id{width:2%} .post-name{width:30%}
+
+</style>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Government Number</th>
+        <th>Phone</th>
+        <th>Email</th>
+    </tr>
+    <?php foreach($block->getVendorsCollection() as $k => $v): ?>
+    <tr>
+        <?php
+        /*
+         * Way 1
+         * */?>
+        <td><?=$v->getId()?></td>
+        <?php
+        /*
+         * Way 2
+         * */?>
+        <td><?=$v['name']?></td>
+        <td><?=$v['address']?></td>
+        <td><?=$v['government_number']?></td>
+        <td><?=$v['phone']?></td>
+        <td><?=$v['email']?></td>
+    </tr>
+    <?php endforeach; ?>
+</table>
