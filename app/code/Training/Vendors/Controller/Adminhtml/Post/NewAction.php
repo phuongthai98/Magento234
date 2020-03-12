@@ -1,9 +1,8 @@
+
 <?php
-
-
 namespace Training\Vendors\Controller\Adminhtml\Post;
 
-class Edit extends \Magento\Backend\App\Action
+class NewAction extends \Magento\Backend\App\Action
 {
 
     const ADMIN_RESOURCE = 'Post';

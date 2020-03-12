@@ -2,12 +2,9 @@
 
 
 namespace Training\Vendors\Block\Adminhtml\Vendors\Edit;
-
-class ResetButton
-{
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
-
-class ResetButton extends GenericButton implements ButtonProviderInterface
+use Magento\Catalog\Block\Adminhtml\Product\Edit\Button\Generic;
+class ResetButton extends Generic implements ButtonProviderInterface
 {
     public function getButtonData()
     {

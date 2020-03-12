@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Training\Vendors\Block\Adminhtml;
+namespace Training\Vendors\Block\Adminhtml\Vendors\Edit;
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
-
-class BackButton extends GenericButton implements ButtonProviderInterface
+use Magento\Catalog\Block\Adminhtml\Product\Edit\Button\Generic;
+class BackButton extends Generic implements ButtonProviderInterface
 {
     public function getButtonData()
     {

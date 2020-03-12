@@ -9,7 +9,7 @@ use Training\Vendors\Model\Vendors as Vendors;
 class Delete extends \Magento\Backend\App\Action
 {
 
-    const ADMIN_RESOURCE = 'Index';
+    const ADMIN_RESOURCE = 'Post';
 
     protected $resultPageFactory;
     protected $vendorsFactory;

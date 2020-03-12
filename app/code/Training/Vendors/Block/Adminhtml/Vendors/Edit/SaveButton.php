@@ -3,8 +3,8 @@
 
 namespace Training\Vendors\Block\Adminhtml\Vendors\Edit;
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
-
-class SaveButton extends GenericButton implements ButtonProviderInterface
+use Magento\Catalog\Block\Adminhtml\Product\Edit\Button\Generic;
+class SaveButton extends Generic implements ButtonProviderInterface
 {
     public function getButtonData()
     {

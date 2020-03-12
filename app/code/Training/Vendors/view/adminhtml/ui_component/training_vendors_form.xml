@@ -20,22 +20,22 @@
         <item name="template" xsi:type="string">templates/form/collapsible</item>
 
         <item name="buttons" xsi:type="array">
-            <item name="back" xsi:type="string">Training\Vendors\Block\Adminhtml\Contact\Edit\BackButton</item>
-            <item name="delete" xsi:type="string">Training\Vendors\Block\Adminhtml\Contact\Edit\DeleteButton</item>
-            <item name="reset" xsi:type="string">Training\Vendors\Block\Adminhtml\Contact\Edit\ResetButton</item>
-            <item name="save" xsi:type="string">Training\Vendors\Block\Adminhtml\Contact\Edit\SaveButton</item>
+            <item name="back" xsi:type="string">Training\Vendors\Block\Adminhtml\Vendors\Edit\BackButton</item>
+            <item name="delete" xsi:type="string">Training\Vendors\Block\Adminhtml\Vendors\Edit\DeleteButton</item>
+            <item name="reset" xsi:type="string">Training\Vendors\Block\Adminhtml\Vendors\Edit\ResetButton</item>
+            <item name="save" xsi:type="string">Training\Vendors\Block\Adminhtml\Vendors\Edit\SaveButton</item>
         </item>
     </argument>
 
-    <dataSource name="jeff_contacts_form_data_source">
+    <dataSource name="training_vendors_form_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
             <argument name="class" xsi:type="string">Training\Vendors\Model\Vendors\DataProvider</argument>
             <argument name="name" xsi:type="string">training_vendors_form_data_source</argument>
-            <argument name="primaryFieldName" xsi:type="string">training_vendors_id</argument>
+            <argument name="primaryFieldName" xsi:type="string">id</argument>
             <argument name="requestFieldName" xsi:type="string">id</argument>
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="submit_url" xsi:type="url" path="training_vendors/index/save" />
+                    <item name="submit_url" xsi:type="url" path="training_vendors/post/save" />
                 </item>
             </argument>
         </argument>
@@ -50,11 +50,11 @@
         <argument name="data" xsi:type="array">
             <item name="config" xsi:type="array">
                 <item name="collapsible" xsi:type="boolean">false</item>
-                <item name="label" xsi:type="string" translate="true">Vendors Fieldset</item>
+                <item name="label" xsi:type="string" translate="true">Vendors Edit</item>
             </item>
         </argument>
 
-        <field name="training_vendors_id">
+        <field name="id">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="visible" xsi:type="boolean">false</item>
@@ -69,6 +69,30 @@
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="label" xsi:type="string">Name</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">vendors</item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="address">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Address</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">vendors</item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="government_number">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Government Number</item>
                     <item name="visible" xsi:type="boolean">true</item>
                     <item name="dataType" xsi:type="string">text</item>
                     <item name="formElement" xsi:type="string">input</item>

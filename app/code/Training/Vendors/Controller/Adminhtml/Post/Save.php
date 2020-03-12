@@ -6,10 +6,10 @@ namespace Training\Vendors\Controller\Adminhtml\Post;
 class Save extends \Magento\Backend\App\Action
 {
 
-    const ADMIN_RESOURCE = 'Index';
+    const ADMIN_RESOURCE = 'Post';
 
     protected $resultPageFactory;
-    protected $contactFactory;
+    protected $vendorsFactory;
 
     public function __construct(
         \Magento\Backend\App\Action\Context $context,
@@ -18,7 +18,7 @@ class Save extends \Magento\Backend\App\Action
     )
     {
         $this->resultPageFactory = $resultPageFactory;
-        $this->contactFactory = $vendorsFactory;
+        $this->vendorsFactory = $vendorsFactory;
         parent::__construct($context);
     }
 
@@ -30,19 +30,19 @@ class Save extends \Magento\Backend\App\Action
         if($data)
         {
             try{
-                $id = $data['training_vendors_id'];
+                $id = $data['id'];
 
-                $vendors = $this->contactFactory->create()->load($id);
+                $vendors = $this->vendorsFactory->create()->load($id);
 
                 $data = array_filter($data, function($value) {return $value !== ''; });
 
-                $contact->setData($data);
-                $contact->save();
+                $vendors->setData($data);
+                $vendors->save();
                 $this->messageManager->addSuccess(__('Successfully saved the item.'));
                 $this->_objectManager->get('Magento\Backend\Model\Session')->setFormData(false);
                 return $resultRedirect->setPath('training_vendors/post/index');
             }
-            catch(\Exception $d)
+            catch(\Exception $e)
             {
                 $this->messageManager->addError($e->getMessage());
                 $this->_objectManager->get('Magento\Backend\Model\Session')->setFormData($data);
