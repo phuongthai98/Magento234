@@ -55,7 +55,7 @@
                 <item name="name" xsi:type="string">add</item>
                 <item name="label" xsi:type="string" translate="true">Add New Post</item>
                 <item name="class" xsi:type="string">primary</item>
-                <item name="url" xsi:type="string">training_vendors/post/create</item>
+                <item name="url" xsi:type="string">*/*/new</item>
             </item>
         </item>
     </argument>
@@ -165,5 +165,14 @@
                 </item>
             </argument>
         </column>
+        <actionsColumn name="actions" class="Training\Vendors\Ui\Component\Listing\Column\PostAction">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="indexField" xsi:type="string">id</item>
+                    <item name="viewUrlPath" xsi:type="string">training_vendors/post/edit</item>
+                    <item name="urlEntityParamName" xsi:type="string">id</item>
+                </item>
+            </argument>
+        </actionsColumn>
     </columns>
 </listing>
