@@ -1,0 +1,128 @@
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">training_vendors_create_form.training_vendors_create_form_data_source</item>
+            <item name="deps" xsi:type="string">training_vendors_create_form.training_vendors_create_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Feedback Information</item>
+        <item name="config" xsi:type="array">
+            <item name="dataScope" xsi:type="string">vendors</item>
+            <item name="namespace" xsi:type="string">vendors_form</item>
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="back" class="Training\Vendors\Block\Adminhtml\Vendors\Edit\BackButton" />
+            <button name="save" class="Training\Vendors\Block\Adminhtml\Vendors\Edit\SaveButton" />
+        </buttons>
+        <namespace>vendors_form</namespace>
+        <dataScope>vendors</dataScope>
+        <deps>
+            <dep>training_vendors_create_form.training_vendors_create_form_data_source</dep>
+        </deps>
+    </settings>
+
+    <dataSource name="training_vendors_create_form_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="training_vendors/post/savePost"/>
+        </settings>
+        <dataProvider class="Training\Vendors\Model\Vendors\DataProvider" name="training_vendors_create_form_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+
+    <fieldset name="vendors_details">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">Vendors Details</item>
+            </item>
+        </argument>
+        <field name="id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="visible" xsi:type="boolean">false</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">ID</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">vendors_details</item>
+                    <item name="dataScope" xsi:type="string">id</item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="name">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="disabled" xsi:type="boolean">false</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Name</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">vendors_details</item>
+                    <item name="dataScope" xsi:type="string">name</item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="address">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="disabled" xsi:type="boolean">false</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Address</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">vendors_details</item>
+                    <item name="dataScope" xsi:type="string">address</item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="email">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="disabled" xsi:type="boolean">false</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Email</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">vendors_details</item>
+                    <item name="dataScope" xsi:type="string">email</item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="phone">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="disabled" xsi:type="boolean">false</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Phone</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">vendors_details</item>
+                    <item name="dataScope" xsi:type="string">phone</item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="government_number">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="disabled" xsi:type="boolean">false</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Government Number</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">vendors_details</item>
+                    <item name="dataScope" xsi:type="string">government_number</item>
+                </item>
+            </argument>
+        </field>
+
+    </fieldset>
+</form>
